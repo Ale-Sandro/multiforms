@@ -1,0 +1,16 @@
+.container_form {
+  width: 600px;
+  /* background-color: #dee2e6; */
+  border-radius: 50px;
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 650px) {
+  .container_form {
+    width: 100%;
+  }
+}
