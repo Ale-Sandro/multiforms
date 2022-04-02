@@ -16,7 +16,7 @@
 }
 .progress_steps::before {
   content: "";
-  background-color: #dbe4ff;
+  background-color: #adb5bd;
   position: absolute;
 
   height: 15px;
@@ -32,7 +32,7 @@
   width: 30px;
   padding: 20px;
   border-radius: 50%;
-  border: 5px solid #dbe4ff;
+  border: 5px solid #adb5bd;
 
   display: flex;
   justify-content: center;
