@@ -10,6 +10,7 @@ export default function StepValidation() {
       </div>
       <div className={style["progress_step"]}>2</div>
       <div className={style["progress_step"]}>3</div>
+      <div className={style["progress_step"]}>4</div>
     </div>
   );
 }

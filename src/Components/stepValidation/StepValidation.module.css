@@ -3,36 +3,38 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 50px 0;
-  height: 30px;
+  margin: 5rem 0;
+  height: 3rem;
   position: relative;
 }
 .progress_bar {
   width: 0%;
-  height: 15px;
-  background-color: #4263eb;
+  height: 1.2rem;
+  background-color: #e63946;
   position: absolute;
   z-index: -1;
 }
 .progress_steps::before {
   content: "";
-  background-color: #adb5bd;
+  background-color: #f1faee;
   position: absolute;
 
-  height: 15px;
+  height: 1.2rem;
   width: 100%;
 
   z-index: -2;
 }
 
 .progress_step {
-  background-color: #f8f9fa;
+  background-color: #f1faee;
+  color: black;
   font-size: 1.5rem;
-  height: 30px;
-  width: 30px;
-  padding: 20px;
+  font-weight: 600;
+  height: 2rem;
+  width: 2rem;
+  padding: 1.3rem;
   border-radius: 50%;
-  border: 5px solid #adb5bd;
+  border: 0.5rem solid #f1faee;
 
   display: flex;
   justify-content: center;
@@ -40,32 +42,11 @@
 }
 
 .progress_step.step--active {
-  border: 5px solid #4263eb;
+  border-color: #e63946;
 }
 .progress_step:nth-child(2) {
   transform: translateX(-10%);
 }
 .progress_step:last-child {
   transform: translateX(10%);
-}
-
-@media screen and (max-width: 650px) {
-  .progress_steps {
-    flex-direction: column;
-    height: 500px;
-  }
-  .progress_steps::before {
-    width: 15px;
-    height: 100%;
-  }
-  .progress_bar {
-    height: 0%;
-    width: 15px;
-  }
-  .progress_step:nth-child(2) {
-    transform: translateY(-10%);
-  }
-  .progress_step:last-child {
-    transform: translateY(10%);
-  }
 }

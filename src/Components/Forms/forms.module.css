@@ -1,0 +1,99 @@
+form {
+  border-radius: 2rem;
+  background-color: #f1faee;
+  height: 60rem;
+  font-size: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+form h3 {
+  color: #000;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+form div {
+  position: relative;
+  width: 70%;
+}
+
+div input {
+  color: #fff;
+  font-weight: 600;
+  font-size: 2rem;
+  width: 100%;
+  height: 5rem;
+  border: none;
+  outline: none;
+  background-color: #1d3557;
+  border-radius: 15px;
+  padding: 0 20px;
+}
+
+div label {
+  position: absolute;
+  font-size: 2.5rem;
+  color: #b2b4bc;
+  top: 10px;
+  left: 20px;
+  pointer-events: none;
+  transition: transform 200ms, color 200ms;
+}
+
+input:focus ~ label {
+  color: #000;
+  font-weight: 600;
+}
+input:not(:placeholder-shown) ~ label {
+  color: #000;
+  font-weight: 600;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  transform: translateY(-2.6rem) translateX(1.2rem) scale(0.7);
+}
+
+.bg-label {
+  background-color: #f1faee;
+  border-radius: 10px;
+  height: 2.5rem;
+  left: 3rem;
+  position: absolute;
+  top: -25px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 10rem;
+}
+input:focus ~ .bg-label,
+input:not(:placeholder-shown) ~ .bg-label {
+  transform: translateY(10px);
+}
+
+/* button */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.buttons button {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: none;
+  background-color: #1d3557;
+  height: 5rem;
+  width: 15rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 3rem;
+}
+.buttons button:hover {
+  background-color: #e63946;
+}
+.buttons button:active {
+  transform: scale(0.9);
+}
