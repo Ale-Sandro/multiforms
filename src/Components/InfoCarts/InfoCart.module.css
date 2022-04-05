@@ -1,0 +1,17 @@
+.container__cartInfo {
+  border-radius: 2rem;
+  background-color: #f1faee;
+  height: 50rem;
+  padding: 1rem;
+}
+
+.container__cartInfo h1 {
+  font-size: 4.5rem;
+  text-align: center;
+  padding: 3rem;
+}
+
+.container__cartInfo p {
+  font-size: 2rem;
+  text-align: center;
+}

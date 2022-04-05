@@ -17,12 +17,13 @@ body {
     sans-serif;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   height: 100vh;
   background-color: #000000;
 }
 
 @media screen and (max-width: 650px) {
   html {
-    font-size: 10px;
+    font-size: 9px;
   }
 }

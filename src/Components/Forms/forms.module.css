@@ -1,26 +1,88 @@
 form {
   border-radius: 2rem;
   background-color: #f1faee;
-  height: 60rem;
+  height: 80rem;
   font-size: 3rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5rem;
+  gap: 3rem;
 }
-form h3 {
+
+.titleForm {
   color: #000;
   font-size: 4rem;
   text-align: center;
   margin-top: 4rem;
+  margin-bottom: 5rem;
 }
-form div {
+.titleForm + span {
+  font-size: 2rem;
+  text-align: center;
+  display: block;
+  margin-top: 2rem;
+}
+
+.containerInput {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.containerInput label {
+  pointer-events: none;
+  margin-left: 5rem;
+  width: 15rem; /*A modifier selon la longuer du label */
+  /*attribue d'une width pour que tous les checkbox sont aligné de haut en bas*/
+}
+.containerInput input {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+/* button */
+button {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: none;
+  background-color: #1d3557;
+  height: 5rem;
+  width: 15rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 3rem;
+}
+button:hover {
+  background-color: #e63946;
+}
+button:active {
+  transform: scale(0.9);
+}
+
+/* Inscriptions.js */
+
+form .infoUser {
   position: relative;
   width: 70%;
 }
 
-div input {
+.infoUser input {
   color: #fff;
   font-weight: 600;
   font-size: 2rem;
@@ -33,7 +95,7 @@ div input {
   padding: 0 20px;
 }
 
-div label {
+.infoUser label {
   position: absolute;
   font-size: 2.5rem;
   color: #b2b4bc;
@@ -43,8 +105,8 @@ div label {
   transition: transform 200ms, color 200ms;
 }
 
-input:focus ~ label,
-input:not(:placeholder-shown) ~ label {
+.infoUser input:focus ~ label,
+.infoUser input:not(:placeholder-shown) ~ label {
   transform: translateY(-2.6rem) translateX(1.2rem) scale(0.7);
   font-weight: 600;
   color: #000;
@@ -61,32 +123,7 @@ input:not(:placeholder-shown) ~ label {
   transition: transform 200ms;
   width: 10rem;
 }
-input:focus ~ .bg-label,
-input:not(:placeholder-shown) ~ .bg-label {
+.infoUser input:focus ~ .bg-label,
+.infoUser input:not(:placeholder-shown) ~ .bg-label {
   transform: translateY(10px);
-}
-
-/* button */
-.buttons {
-  display: flex;
-  justify-content: flex-end;
-}
-.buttons button {
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 600;
-  border: none;
-  background-color: #1d3557;
-  height: 5rem;
-  width: 15rem;
-  border-radius: 10px;
-  cursor: pointer;
-  text-align: center;
-  margin-top: 3rem;
-}
-.buttons button:hover {
-  background-color: #e63946;
-}
-.buttons button:active {
-  transform: scale(0.9);
 }
