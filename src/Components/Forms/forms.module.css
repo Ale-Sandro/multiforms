@@ -43,18 +43,11 @@ div label {
   transition: transform 200ms, color 200ms;
 }
 
-input:focus ~ label {
-  color: #000;
-  font-weight: 600;
-}
-input:not(:placeholder-shown) ~ label {
-  color: #000;
-  font-weight: 600;
-}
-
 input:focus ~ label,
 input:not(:placeholder-shown) ~ label {
   transform: translateY(-2.6rem) translateX(1.2rem) scale(0.7);
+  font-weight: 600;
+  color: #000;
 }
 
 .bg-label {
