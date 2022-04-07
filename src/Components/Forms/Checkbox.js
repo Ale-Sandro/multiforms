@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useRef } from "react";
 import style from "./forms.module.css";
 
 export default function Checkbox(props) {
+  const checkbox = useRef([]);
+
+  const addCheck = (el) => {
+    if (!checkbox.current.includes(el)) {
+      checkbox.current.push(el);
+    }
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    console.log(checkbox);
+    const isCheck = checkbox.current.filter((check) => check.checked);
+    let isCheckValue = isCheck.map((check) => check.value);
+    if (isCheckValue.length === 0) {
+      isCheckValue = "Aucune donnée entrée";
+    }
+
+    const datas = {
+      cuisine: isCheckValue,
+    };
+
+    props.modifyIndex("+", datas);
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className={style.headerForm}>
         <h3 className={style.titleForm}>
           Quelle sont vos cuisines préférées ?
@@ -12,29 +37,45 @@ export default function Checkbox(props) {
       </div>
       <div className={style.containerInput}>
         <label htmlFor="italian">Italienne</label>
-        <input type="checkbox" id="italian" value="italian"></input>
+        <input
+          ref={addCheck}
+          type="checkbox"
+          id="italian"
+          value="italienne"
+        ></input>
       </div>
       <div className={style.containerInput}>
         <label htmlFor="japanese">Japonaise</label>
-        <input type="checkbox" id="japanese" value="japanese"></input>
+        <input
+          ref={addCheck}
+          type="checkbox"
+          id="japanese"
+          value="japonaise"
+        ></input>
       </div>
       <div className={style.containerInput}>
         <label htmlFor="Greek">Grecque</label>
-        <input type="checkbox" id="Greek" value="Greek"></input>
+        <input
+          ref={addCheck}
+          type="checkbox"
+          id="Greek"
+          value="Grecque"
+        ></input>
       </div>
       <div className={style.containerInput}>
         <label htmlFor="oriental">Orientale</label>
-        <input type="checkbox" id="oriental" value="oriental"></input>
-      </div>
-      <div className={style.containerInput}>
-        <label htmlFor="oriental">Orientale</label>
-        <input type="checkbox" id="oriental" value="oriental"></input>
+        <input
+          ref={addCheck}
+          type="checkbox"
+          id="oriental"
+          value="oriental"
+        ></input>
       </div>
       <div className={style.buttons}>
         <button type="button" onClick={() => props.modifyIndex("-")}>
           Précédent
         </button>
-        <button onClick={() => props.modifyIndex("+")}>Valider</button>
+        <button>Valider</button>
       </div>
     </form>
   );

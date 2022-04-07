@@ -9,9 +9,19 @@ import FormRadio from "./Components/Forms/FormRadio";
 import { useState } from "react";
 
 function App() {
-  const [formIndex, setFormIndex] = useState(1);
+  const [formIndex, setFormIndex] = useState(0);
+  const [allDatas, setAllDatas] = useState();
 
-  const modifyIndex = (nextOrPrev) => {
+  const modifyIndex = (nextOrPrev, datas = undefined) => {
+    if (datas != undefined) {
+      Object.keys(datas).forEach((v) => {
+        return datas[v] === "" ? (datas[v] = "Aucune donnée entrée") : datas[v];
+      });
+    }
+
+    const newDatas = { ...allDatas, ...datas };
+    setAllDatas(newDatas);
+
     if (nextOrPrev === "-") {
       setFormIndex(formIndex - 1);
     }
@@ -19,13 +29,12 @@ function App() {
       setFormIndex(formIndex + 1);
     }
   };
-
   const forms = [
     <InfoCartBegin modifyIndex={modifyIndex} key={0} />,
     <Inscription modifyIndex={modifyIndex} key={1} />,
     <Checkbox modifyIndex={modifyIndex} key={2} />,
     <FormRadio modifyIndex={modifyIndex} key={3} />,
-    <InfoCartEnd modifyIndex={modifyIndex} key={4} />,
+    <InfoCartEnd modifyIndex={modifyIndex} datasUser={allDatas} key={4} />,
   ];
 
   return (

@@ -5,7 +5,6 @@ export default function StepValidation(props) {
   const one_step = 100 / Number(props.lengthOfForms - 2); //2 correspond a cartBegin et cartEnd;
 
   let progressBar = "";
-  console.log(props.formIndex);
 
   if (props.formIndex === 2) {
     progressBar = one_step;
