@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./forms.module.css";
 
-export default function formRadio() {
+export default function formRadio(props) {
   return (
     <form>
       <div className={style.headerForm}>
@@ -49,8 +49,10 @@ export default function formRadio() {
         ></input>
       </div>
       <div className={style.buttons}>
-        <button type="button">Précédent</button>
-        <button>Valider</button>
+        <button type="button" onClick={() => props.modifyIndex("-")}>
+          Précédent
+        </button>
+        <button onClick={() => props.modifyIndex("+")}>Valider</button>
       </div>
     </form>
   );

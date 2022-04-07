@@ -13,6 +13,7 @@
   background-color: #e63946;
   position: absolute;
   z-index: -1;
+  transition: width 2s;
 }
 .progress_steps::before {
   content: "";
@@ -43,6 +44,7 @@
 
 .progress_step.step--active {
   border-color: #e63946;
+  transition: border-color 3s;
 }
 .progress_step:nth-child(2) {
   transform: translateX(-10%);

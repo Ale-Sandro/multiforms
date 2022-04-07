@@ -9,7 +9,7 @@ import FormRadio from "./Components/Forms/FormRadio";
 import { useState } from "react";
 
 function App() {
-  const [formIndex, setFormIndex] = useState(0);
+  const [formIndex, setFormIndex] = useState(1);
 
   const modifyIndex = (nextOrPrev) => {
     if (nextOrPrev === "-") {
@@ -19,15 +19,23 @@ function App() {
       setFormIndex(formIndex + 1);
     }
   };
+
+  const forms = [
+    <InfoCartBegin modifyIndex={modifyIndex} key={0} />,
+    <Inscription modifyIndex={modifyIndex} key={1} />,
+    <Checkbox modifyIndex={modifyIndex} key={2} />,
+    <FormRadio modifyIndex={modifyIndex} key={3} />,
+    <InfoCartEnd modifyIndex={modifyIndex} key={4} />,
+  ];
+
   return (
     <>
       <ContainerForm>
-        <StepValidation />
-        {formIndex === 0 && <InfoCartBegin modifyIndex={modifyIndex} />}
-        {formIndex === 0 && <Inscription modifyIndex={modifyIndex} />}
-        {formIndex === 0 && <Checkbox modifyIndex={modifyIndex} />}
-        {formIndex === 0 && <FormRadio />}
-        {formIndex === 0 && <InfoCartEnd />}
+        <StepValidation lengthOfForms={forms.length} formIndex={formIndex} />
+
+        {forms.filter((_, i) => {
+          return forms[formIndex] === forms[i];
+        })}
       </ContainerForm>
     </>
   );

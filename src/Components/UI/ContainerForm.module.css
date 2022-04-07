@@ -1,6 +1,6 @@
 .container_form {
   /* background-color: aqua; */
-  width: 600px;
+  width: 60rem;
   border-radius: 50px;
   margin-top: 50px;
 
@@ -10,6 +10,6 @@
 }
 @media screen and (max-width: 650px) {
   .container_form {
-    width: 90%;
+    width: 35rem;
   }
 }
