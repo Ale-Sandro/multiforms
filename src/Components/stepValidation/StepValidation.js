@@ -6,7 +6,9 @@ export default function StepValidation(props) {
 
   let progressBar = "";
 
-  if (props.formIndex === 2) {
+  if (props.formIndex === 1) {
+    progressBar = "0";
+  } else if (props.formIndex === 2) {
     progressBar = one_step;
   } else if (props.formIndex === 3) {
     progressBar = one_step * 2;

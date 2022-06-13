@@ -10,7 +10,6 @@ export default function InfoCartEnd({ datasUser }) {
 
   let cuisine = datasUser.cuisine;
   if (typeof cuisine === "object") {
-    console.log("je suis dans le if");
     cuisine = cuisine.map((el) => firstCapitalLetter(el)).join(", ");
   }
 

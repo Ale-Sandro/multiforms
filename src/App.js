@@ -41,7 +41,6 @@ function App() {
     <>
       <ContainerForm>
         <StepValidation lengthOfForms={forms.length} formIndex={formIndex} />
-
         {forms.filter((_, i) => {
           return forms[formIndex] === forms[i];
         })}
